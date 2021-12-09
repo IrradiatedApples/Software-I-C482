@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ProductsController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <GridPane style="-fx-border-color: black; -fx-border-radius: 20;">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="30.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="120.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="130.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="80.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="95.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="labelTitle" style="-fx-font-weight: bold;" text="Add Product" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label fx:id="labelID" text="ID" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label fx:id="labelPrice" text="Price/Cost per Unit" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <Label fx:id="labelInv" text="Inventory" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Label fx:id="labelName" text="Name" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Label fx:id="labelMax" text="Max" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <Label fx:id="labelMin" text="Min" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
+                  <TextField fx:id="textID" disable="true" editable="false" prefHeight="25.0" prefWidth="109.0" promptText="Auto Gen - Disabled" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <TextField fx:id="textName" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <TextField fx:id="textInv" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                  <TextField fx:id="textPrice" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                  <TextField fx:id="textMax" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                  <TextField fx:id="textMin" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+                  <Label fx:id="labelExceptions" alignment="TOP_LEFT" prefHeight="188.0" prefWidth="250.0" text="Exceptions:" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="8" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets top="20.0" />
+                     </GridPane.margin></Label>
+               </children>
+            </GridPane>
+            <GridPane GridPane.columnIndex="1">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="30.0" minHeight="0.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="141.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="140.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextField fx:id="textSearchParts" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="50.0" onKeyPressed="#searchParts" prefHeight="25.0" prefWidth="175.0" promptText="Search by Part ID or Name" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="TOP" GridPane.vgrow="NEVER" />
+                  <TableView fx:id="tablePartsAdd" prefHeight="101.0" prefWidth="460.0" GridPane.rowIndex="1">
+                    <columns>
+                      <TableColumn fx:id="colPartAddID" prefWidth="75.0" text="Part ID" />
+                      <TableColumn fx:id="colPartAddName" prefWidth="125.0" text="Part Name" />
+                        <TableColumn fx:id="colPartAddInv" prefWidth="100.0" text="Inventory Level" />
+                        <TableColumn fx:id="colPartAddPrice" prefWidth="150.0" text="Price/Cost per Unit" />
+                    </columns>
+                  </TableView>
+                  <TableView fx:id="tableProdParts" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
+                    <columns>
+                      <TableColumn fx:id="colProdPartsID" prefWidth="75.0" text="Part ID" />
+                      <TableColumn fx:id="colProdPartsName" prefWidth="125.0" text="Part Name" />
+                        <TableColumn fx:id="colProdPartsInv" prefWidth="100.0" text="Inventory Level" />
+                        <TableColumn fx:id="colProdPartsPrice" prefWidth="150.0" text="Price/Cost per Unit" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="buttonAdd" mnemonicParsing="false" onAction="#onAddPart" text="Add" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                  <Button fx:id="buttonRemove" mnemonicParsing="false" onAction="#onRemovePart" text="Remove Associated Part" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+                  <Button fx:id="buttonSave" mnemonicParsing="false" onAction="#onSave" text="Save" GridPane.halignment="RIGHT" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets right="103.0" />
+                     </GridPane.margin></Button>
+                  <Button fx:id="buttonCancel" mnemonicParsing="false" onAction="#toMain" text="Cancel" GridPane.halignment="RIGHT" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+               </children>
+               <GridPane.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </GridPane.margin>
+            </GridPane>
+         </children>
+         <GridPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </GridPane.margin>
+      </GridPane>
+   </children>
+</GridPane>
